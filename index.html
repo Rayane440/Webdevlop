@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webdevelop - Offres</title>
+
+    <!-- Google Font League Spartan -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: 'League Spartan', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #e3f2fd;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0d47a1;
+            padding: 15px;
+            color: white;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Section Hero */
+        .hero {
+            background: #64b5f6;
+            padding: 50px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            animation: bounce 2s infinite;
+        }
+
+        /* Offres */
+        .offers {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .offer-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5722;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .offer-icon {
+            font-size: 50px;
+            color: #1976d2;
+        }
+
+        /* Section Avis */
+        .reviews {
+            background: white;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .review {
+            margin: 10px;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .stars {
+            color: gold;
+            font-size: 18px;
+        }
+
+        /* Formulaire */
+        .review-form {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .review-form input, .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .review-form button {
+            padding: 10px;
+            background: #0d47a1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .review-form button:hover {
+            background: #ff5722;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d47a1;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+    </style>
+
+    <!-- Icônes FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="bd.png" alt="Logo Webdevelop">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Commencer</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Webdevelop</h1>
+        <p>Décrivez, publiez, gagnez</p>
+    </section>
+
+    <section class="offers">
+        <!-- Offre 1: Site HTML -->
+        <div class="offer-box">
+            <div class="offer-badge">🔥 BEST-SELLER</div>
+            <div class="offer-icon"><i class="fas fa-globe"></i></div>
+            <h3>Site HTML - 400 Dhs</h3>
+            <p>Un site performant et économique pour seulement 400 Dhs !</p>
+        </div>
+
+        <!-- Offre 2: TSX File (New) -->
+        <div class="offer-box">
+            <div class="offer-badge">🆕 NEW</div>
+            <div class="offer-icon"><i class="fas fa-code"></i></div>
+            <h3>TSX File</h3>
+            <p>Optimisez vos projets avec un fichier TSX prêt à l'emploi.</p>
+        </div>
+
+        <!-- Offre 3: Réduction sur le 2ᵉ site -->
+        <div class="offer-box">
+            <div class="offer-badge">💰 ÉCONOMISEZ</div>
+            <div class="offer-icon"><i class="fas fa-tags"></i></div>
+            <h3>Payez votre 2ᵉ site moins cher</h3>
+            <p>Obtenez une réduction exclusive en achetant un deuxième site !</p>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2>⭐ Avis Clients</h2>
+        
+        <div class="review">
+            <p>"Super service, rapide et efficace !"</p>
+            <div class="stars">★★★★★</div>
+            <p>- Xavier Francois</p>
+        </div>
+
+        <div class="review">
+            <p>"Bon rapport qualité-prix, je recommande."</p>
+            <div class="stars">★★★★☆</div>
+            <p>- Adam</p>
+        </div>
+
+        <div class="review">
+            <p>"Facile à utiliser et très pro !"</p>
+            <div class="stars">★★★★★</div>
+            <p>- ilyas</p>
+        </div>
+
+        <div class="review">
+            <p>"Quelques petits détails à améliorer mais globalement bon."</p>
+            <div class="stars">★★★★☆</div>
+            <p>- Zakaria</p>
+        </div>
+    </section>
+
+    <section class="review-form">
+        <h2>✍️ Écrire mon avis</h2>
+        <form action="https://formspree.io/f/mjkgpdzn" method="POST">
+            <input type="text" name="nom" placeholder="Votre Nom" required>
+            <input type="email" name="email" placeholder="Votre Email" required>
+            
+            <!-- Système de notation par étoiles -->
+            <label for="rating">Votre Note :</label>
+            <div class="rating">
+                <input type="radio" id="star5" name="note" value="5"><label for="star5">5⭐</label>
+                <input type="radio" id="star4" name="note" value="4"><label for="star4">4⭐</label>
+                <input type="radio" id="star3" name="note" value="3"><label for="star3">3⭐</label>
+                <input type="radio" id="star2" name="note" value="2"><label for="star2">2⭐</label>
+                <input type="radio" id="star1" name="note" value="1"><label for="star1">1⭐</label>
+            </div>
+    
+            <textarea name="avis" rows="4" placeholder="Votre avis..." required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+    
+    <footer>
+         <span>Webdevelop 2025 ©</span></p>
+        <p>By Rayane Mahmoud</p>
+    </footer>
+
+</body>
+</html>
