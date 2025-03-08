@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moray XP - Bienvenue</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+        }
+
+        #lang-btn {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 8px 15px;
+            font-size: 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #lang-btn:hover {
+            background: white;
+            color: black;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .link-card {
+            width: 80%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            margin-bottom: 5px;
+            color: #00ADB5;
+        }
+
+        p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="moray_logo.png" alt="Moray XP" class="logo">
+        <button id="lang-btn">🇫🇷 / 🇬🇧</button>
+    </header>
+
+    <main>
+        <h1 id="welcome-text">Découvrez Moray XP</h1>
+        
+        <div class="link-card" onclick="openLink('https://www.instagram.com/moray.off?igsh=MTJzaXB0NjA3OWdy')">
+            <h2 id="insta-title">📸 Suivez-nous sur Instagram</h2>
+            <p id="insta-desc">Restez informé sur toutes nos actualités !</p>
+        </div>
+
+        <div class="link-card" onclick="openLink('https://moray.vercel.app')">
+            <h2 id="site-title">🌐 Visitez notre site web</h2>
+            <p id="site-desc">Tout sur Moray XP en un clic.</p>
+        </div>
+
+        <div class="link-card" onclick="openLink('https://youtube.com/@moray.officiel?si=jA7Le_-6Jp9TzzUX')">
+            <h2 id="yt-title">🎬 Abonnez-vous à notre YouTube</h2>
+            <p id="yt-desc">Nos vidéos exclusives et présentations !</p>
+        </div>
+    </main>
+
+    <footer>
+        <p id="footer-text">© 2025 Moray XP - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+
+        const langBtn = document.getElementById('lang-btn');
+        let lang = 'fr';
+
+        const translations = {
+            en: {
+                welcome: "Discover Moray XP",
+                instaTitle: "📸 Follow us on Instagram",
+                instaDesc: "Stay updated with our latest news!",
+                siteTitle: "🌐 Visit our website",
+                siteDesc: "Everything about Moray XP in one click.",
+                ytTitle: "🎬 Subscribe to our YouTube",
+                ytDesc: "Exclusive videos and showcases!",
+                footer: "© 2025 Moray XP - All rights reserved"
+            },
+            fr: {
+                welcome: "Découvrez Moray XP",
+                instaTitle: "📸 Suivez-nous sur Instagram",
+                instaDesc: "Restez informé sur toutes nos actualités !",
+                siteTitle: "🌐 Visitez notre site web",
+                siteDesc: "Tout sur Moray XP en un clic.",
+                ytTitle: "🎬 Abonnez-vous à notre YouTube",
+                ytDesc: "Nos vidéos exclusives et présentations !",
+                footer: "© 2025 Moray XP - Tous droits réservés"
+            }
+        };
+
+        langBtn.addEventListener('click', () => {
+            lang = lang === 'fr' ? 'en' : 'fr';
+            document.getElementById('welcome-text').textContent = translations[lang].welcome;
+            document.getElementById('insta-title').textContent = translations[lang].instaTitle;
+            document.getElementById('insta-desc').textContent = translations[lang].instaDesc;
+            document.getElementById('site-title').textContent = translations[lang].siteTitle;
+            document.getElementById('site-desc').textContent = translations[lang].siteDesc;
+            document.getElementById('yt-title').textContent = translations[lang].ytTitle;
+            document.getElementById('yt-desc').textContent = translations[lang].ytDesc;
+            document.getElementById('footer-text').textContent = translations[lang].footer;
+        });
+    </script>
+</body>
+</html>
